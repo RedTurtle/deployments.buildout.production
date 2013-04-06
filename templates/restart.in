@@ -1,0 +1,3 @@
+#!/bin/bash
+${stop:output} && sleep ${restart:sleep}
+${start:output}

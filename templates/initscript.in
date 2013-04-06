@@ -1,0 +1,53 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          ${initscript:name}
+# Required-Start:    $ALL
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: ${initscript:name} initscript
+# Description:       This file should be copied/symlinked in /etc/init.d and
+#                    activated using the update-rc.d script:
+#                    cp ${initscript:output} /etc/init.d/${initscript:name}
+#                    update-rc.d ${initscript:name} defaults
+### END INIT INFO
+
+test $DEBIAN_SCRIPT_DEBUG && set -v -x
+
+case "$1" in
+start)
+  echo "Starting ${initscript:name} ..."
+  ${start:output}
+  echo "... done"
+  ;;
+restart)
+  echo "Restarting ${initscript:name} ..."
+  ${restart:output}
+  echo "... done"
+  ;;
+stop)
+  echo "Stopping ${initscript:name} ..."
+  ${stop:output}
+  echo "... done"
+  ;;
+status)
+  echo "Status ${initscript:name} ..."
+  ${status:output}
+  echo "... done"
+  ;;
+graceful)
+  echo "Restarting gracefully ${initscript:name} ..."
+  ${graceful:output}
+  echo "... done"
+  ;;
+
+*)
+  echo "Usage: $0 {start|restart|stop|graceful|status}" >&2
+
+  exit 1
+  ;;
+esac
+
+exit 0
+
+# vim:set ai sts=2 sw=2 tw=0:
