@@ -6,7 +6,7 @@ install:
   - python bootstrap.py -c ./.travis.cfg
 before_script:
   - ln -s ./profiles/base.cfg base.cfg
-  - ln -s ./profiles/plone.cfg plone.cfg
+  - ln -s ./profiles/plone-example.cfg plone.cfg
 script:
   - bin/buildout -c base.cfg
   - bin/buildout -c plone.cfg
