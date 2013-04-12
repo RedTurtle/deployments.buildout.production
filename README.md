@@ -41,4 +41,5 @@ folder (`parts/supervisor/supervisord.conf`)
 Connect some components
 -----------------------
 Take as an example the file `config/plone-example.cfg`.
-This example is very minimal, but
+This example is very minimal: it just adds two programs to supervisor, assuming
+that the plone directory is in `components/plone`.
