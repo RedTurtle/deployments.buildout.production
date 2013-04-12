@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/RedTurtle/deployments.buildout.production.png?branch=master)](https://travis-ci.org/RedTurtle/deployments.buildout.production)
 deployments.buildout.production
 ===============================
 
