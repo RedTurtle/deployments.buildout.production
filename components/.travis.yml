@@ -1,0 +1,12 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+install:
+  - python bootstrap.py -c ./.travis.cfg
+before_script:
+  - ln -s ./profiles/production.cfg production.cfg
+  - ln -s ./profiles/development.cfg development.cfg
+script:
+  - bin/buildout -c development.cfg
+  - bin/buildout -c production.cfg

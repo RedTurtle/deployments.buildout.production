@@ -3,10 +3,6 @@ python:
   - "2.6"
   - "2.7"
 install:
-  - python bootstrap.py -c ./.travis.cfg
-before_script:
-  - ln -s ./config/base.cfg base.cfg
-  - ln -s ./config/plone-example.cfg plone.cfg
+  - python bootstrap.py
 script:
-  - bin/buildout -c base.cfg
-  - bin/buildout -c plone.cfg
+  - bin/buildout
