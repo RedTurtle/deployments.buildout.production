@@ -42,7 +42,7 @@ Connect some components
 To connect other components you need to use fabric. If you are in the production buildout the command is:
 
 ```bash
-$ fab need:[component]
+$ fab pull_cmp:[component]
 ```
 where component is one of the following:
  * plone
