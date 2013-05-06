@@ -10,7 +10,6 @@ Those are the commands you want to run
 ```
 virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
 . bin activate
-ln -s config/base.cfg buildout.cfg
 ./bin/python2.7 bootstrap.py
 ./bin/buildout
 ```
@@ -40,6 +39,12 @@ folder (`parts/supervisor/supervisord.conf`)
 
 Connect some components
 -----------------------
-Take as an example the file `config/plone-example.cfg`.
-This example is very minimal: it just adds two programs to supervisor, assuming
-that the plone directory is in `components/plone`.
+To connect other components you need to use fabric. If you are in the production buildout the command is:
+
+```bash
+$ fab pull_cmp:[component]
+```
+where component is one of the following:
+ * plone
+
+This will download the plone buildout to the ./components directory.
