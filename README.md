@@ -16,6 +16,7 @@ virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
 
 This will give you, in the `bin` folder a bunch of commands to control your
 deployment:
+- fab
 - supervisord
 - supervisorctl
 - start (alias for supervisord)
@@ -42,7 +43,7 @@ Connect some components
 To connect other components you need to use fabric. If you are in the production buildout the command is:
 
 ```bash
-$ fab pull_cmp:[component]
+$ ./bin/fab pull_cmp:[component]
 ```
 where component is one of the following:
  * plone
