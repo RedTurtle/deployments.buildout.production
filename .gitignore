@@ -1,5 +1,6 @@
 bin/
 buildout.cfg
+components/*/
 eggs/
 etc/
 include/
