@@ -6,3 +6,4 @@ install:
   - python bootstrap.py
 script:
   - bin/buildout
+  - bin/fab pull_cmp:plone
