@@ -1,2 +1,2 @@
 #!/bin/bash
-${buildout:directory}/bin/supervisorctl shutdown
+su - ${initscript:user} -c "${buildout:directory}/bin/supervisorctl shutdown"
