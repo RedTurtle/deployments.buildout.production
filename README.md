@@ -38,6 +38,17 @@ Check the file for more detailed instructions.
 The configuration for supervisor can be checked in the supervisor part
 folder (`parts/supervisor/supervisord.conf`)
 
+Configuration
+-------------
+
+If you want supervisord to run as a different user,
+modify `supervisord-user` in the `[supervisor]` section, e.g.:
+
+```
+[supervisor]
+supervisord-user = plone
+```
+
 Connect some components
 -----------------------
 To connect other components you need to use fabric. If you are in the production buildout the command is:
