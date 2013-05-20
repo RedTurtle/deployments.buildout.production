@@ -1,2 +1,2 @@
 #!/bin/bash
-su - ${initscript:user} -c "${buildout:directory}/bin/supervisord"
+su - ${supervisor:supervisord-user} -c "${buildout:directory}/bin/supervisord"
