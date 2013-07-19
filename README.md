@@ -4,10 +4,21 @@ deployments.buildout.production
 
 A buildout template that pulls in supervisor.
 
+How to make a copy of this buildout
+-----------------------------------
+Launch those lines
+```bash
+wget https://github.com/RedTurtle/deployments.buildout.production/archive/master.zip
+unzip master.zip
+rm master.zip
+cd deployments.buildout.production-master
+make quickstart
+```
+
 For the impatients
 ------------------
 Those are the commands you want to run
-```
+```bash
 virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
 . bin activate
 ./bin/python2.7 bootstrap.py
@@ -44,7 +55,7 @@ Configuration
 If you want supervisord to run as a different user,
 modify `supervisord-user` in the `[supervisor]` section, e.g.:
 
-```
+```config
 [supervisor]
 supervisord-user = plone
 ```
