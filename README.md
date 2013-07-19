@@ -60,9 +60,12 @@ modify `supervisord-user` in the `[supervisor]` section, e.g.:
 supervisord-user = plone
 ```
 
-Connect some components
------------------------
-To connect other components you can use make.
+Connect only some components
+----------------------------
+To connect only some components 
+you should not use `make quickstart`, 
+but after getting a copy of this buildout 
+you can run:
 
 ```bash
 make get_$(COMPONENT)
@@ -80,4 +83,11 @@ To get all the known components just launch:
 make get_all
 ```
 
-Remember to uncomment the wanted supervisor programs!
+If you want to remove some components
+just delete the relative folder 
+in the `components` directory, e.g::
+```bash
+rm -rf components/varnish
+```
+
+Remember to comment/uncomment the wanted supervisor programs!
