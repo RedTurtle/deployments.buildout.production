@@ -5,5 +5,6 @@ python:
 install:
   - python bootstrap.py
 script:
+  - bin/pip install --upgrade setuptools
   - bin/buildout
   - bin/fab pull_cmp:plone
