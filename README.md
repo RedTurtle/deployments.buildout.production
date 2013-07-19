@@ -51,12 +51,22 @@ supervisord-user = plone
 
 Connect some components
 -----------------------
-To connect other components you need to use fabric. If you are in the production buildout the command is:
+To connect other components you can use make.
 
 ```bash
-$ ./bin/fab pull_cmp:[component]
+make get_$(COMPONENT)
 ```
-where component is one of the following:
+where `$(COMPONENT)` is one of the following:
+ * haproxy 
  * plone
+ * varnish
 
-This will download the plone buildout to the ./components directory.
+This will download the `$(COMPONENT)` buildout 
+to the `./components/$(COMPONENT)` directory.
+
+To get all the known components just launch:
+```bash
+make get_all
+```
+
+Remember to 

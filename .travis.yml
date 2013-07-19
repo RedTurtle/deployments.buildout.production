@@ -7,3 +7,4 @@ install:
   - python bootstrap.py
 script:
   - bin/buildout
+  - make get_all
