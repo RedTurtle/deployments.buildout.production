@@ -69,4 +69,4 @@ To get all the known components just launch:
 make get_all
 ```
 
-Remember to 
+Remember to uncomment the wanted supervisor programs!
