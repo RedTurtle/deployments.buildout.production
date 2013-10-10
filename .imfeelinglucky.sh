@@ -16,4 +16,3 @@ PYTHON=`which python2.7 || which python`
 ln -sf profiles/production.cfg buildout.cfg
 $PYTHON bootstrap.py
 ./bin/buildout
-./bin/fab component_buildout

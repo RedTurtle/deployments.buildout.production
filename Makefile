@@ -32,3 +32,6 @@ get_varnish:
 get_all: get_haproxy get_plone get_varnish
 
 quickstart: lucky
+
+components:
+	./bin/fab component_buildout
