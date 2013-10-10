@@ -13,6 +13,7 @@ PYTHON=`which python2.7 || which python`
 PYTHON=`which python2.7 || which python`
 
 ./bin/pip install --upgrade setuptools
+ln -sf profiles/production.cfg
 $PYTHON bootstrap.py
 ./bin/buildout
 ./bin/fab component_buildout

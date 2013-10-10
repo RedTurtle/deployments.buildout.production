@@ -21,6 +21,7 @@ Those are the commands you want to run
 ```bash
 virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
 . bin activate
+ln -sf profiles/simple.cfg buildout.cfg
 ./bin/python2.7 bootstrap.py
 ./bin/buildout
 ```
@@ -62,20 +63,20 @@ supervisord-user = plone
 
 Connect only some components
 ----------------------------
-To connect only some components 
-you should not use `make quickstart`, 
-but after getting a copy of this buildout 
+To connect only some components
+you should not use `make quickstart`,
+but after getting a copy of this buildout
 you can run:
 
 ```bash
 make get_$(COMPONENT)
 ```
 where `$(COMPONENT)` is one of the following:
- * haproxy 
+ * haproxy
  * plone
  * varnish
 
-This will download the `$(COMPONENT)` buildout 
+This will download the `$(COMPONENT)` buildout
 to the `./components/$(COMPONENT)` directory.
 
 To get all the known components just launch:
@@ -84,7 +85,7 @@ make get_all
 ```
 
 If you want to remove some components
-just delete the relative folder 
+just delete the relative folder
 in the `components` directory, e.g::
 ```bash
 rm -rf components/varnish
