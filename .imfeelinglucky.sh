@@ -15,3 +15,4 @@ PYTHON=`which python2.7 || which python`
 ./bin/pip install --upgrade setuptools
 $PYTHON bootstrap.py
 ./bin/buildout
+./bin/fab component_buildout
