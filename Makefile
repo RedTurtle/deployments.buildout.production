@@ -31,4 +31,4 @@ get_varnish:
 
 get_all: get_haproxy get_plone get_varnish
 
-quickstart: lucky get_all
+quickstart: lucky
