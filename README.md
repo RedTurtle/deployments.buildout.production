@@ -53,6 +53,13 @@ folder (`parts/supervisor/supervisord.conf`)
 Configuration
 -------------
 
+To correctly prepare the initscript change the `name` parameter
+in the `[initscript]` session:
+```config
+[initscript]
+name = www.example.com
+```
+
 If you want supervisord to run as a different user,
 modify `supervisord-user` in the `[supervisor]` section, e.g.:
 
