@@ -8,7 +8,7 @@ How to make a copy of this buildout
 -----------------------------------
 Launch those lines
 ```bash
-wget https://github.com/RedTurtle/deployments.buildout.production/archive/master.zip
+wget -O master.zip https://github.com/RedTurtle/deployments.buildout.production/archive/master.zip
 unzip master.zip
 rm master.zip
 cd deployments.buildout.production-master
