@@ -22,7 +22,7 @@ Those are the commands you want to run
 virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
 . bin/activate
 ln -sf profiles/simple.cfg buildout.cfg
-./bin/python2.7 bootstrap.py
+./bin/pip install -r requirements.txt
 ./bin/buildout
 ```
 
