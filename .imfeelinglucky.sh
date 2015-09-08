@@ -12,7 +12,6 @@ PYTHON=`which python2.7 || which python`
 # Now we have
 PYTHON=`which python2.7 || which python`
 
-./bin/pip install --upgrade setuptools
+./bin/pip install -r requirements.txt
 ln -sf profiles/production.cfg buildout.cfg
-$PYTHON bootstrap.py
 ./bin/buildout
