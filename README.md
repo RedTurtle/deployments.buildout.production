@@ -28,7 +28,6 @@ ln -sf profiles/simple.cfg buildout.cfg
 
 This will give you, in the `bin` folder a bunch of commands to control your
 deployment:
-- fab
 - supervisord
 - supervisorctl
 - start (alias for supervisord)
@@ -36,6 +35,9 @@ deployment:
 - restart (alias for supervisorctl shutdown && wait some time && supervisord)
 - stop (alias for supervisorctl shutdown)
 - graceful (alias for supervisorctl restart all)
+
+Optionally you can add a `fabric` part. It will install a local fab script
+- fab
 
 In addition it will install in the `etc` folder an init script for debian like
 systems.
@@ -59,6 +61,7 @@ in the `[initscript]` session:
 [initscript]
 name = www.example.com
 ```
+The default is to take buildout folder name.
 
 If you want supervisord to run as a different user,
 modify `supervisord-user` in the `[supervisor]` section, e.g.:
@@ -67,6 +70,8 @@ modify `supervisord-user` in the `[supervisor]` section, e.g.:
 [supervisor]
 supervisord-user = plone
 ```
+
+The default is to take the user launching buildout.
 
 Connect only some components
 ----------------------------
