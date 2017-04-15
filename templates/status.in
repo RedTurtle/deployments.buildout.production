@@ -1,2 +1,2 @@
 #!/bin/bash
-${buildout:directory}/bin/supervisorctl status
+su - ${supervisor:supervisord-user} -c "${buildout:directory}/bin/supervisorctl status"
