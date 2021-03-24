@@ -1,0 +1,7 @@
+#!/bin/bash
+  
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+pm2_command=`which pm2`
+$$pm2_command restart rendertron-volto
