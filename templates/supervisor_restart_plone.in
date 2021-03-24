@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+supervisorctl=${buildout:directory}/bin/supervisorctl 
+
+MAX=5
+MIN=60
+DIFF=$((MAX-MIN+1))
+random_sleep=$(($(($$RANDOM%$$DIFF))+$$MIN))
+
+sleep $random_sleep
+
+for instance in `$supervisorctl status|grep instance|awk '{print $1}'`
+    do
+        $supervisorctl restart $instance
+        sleep 30
+    done

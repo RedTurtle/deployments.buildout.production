@@ -2,7 +2,41 @@
 deployments.buildout.production
 ===============================
 
-A buildout template that pulls in supervisor.
+
+# Redturtle deployment production 
+  
+Manage staging or production environments using pm2 (default) or supervisor as control system.
+
+## Basic setup example
+```
+git clone git@github.com:RedTurtle/deployments.buildout.production.git
+cd deployments.buildout.production
+virtualenv --python=/usr/local/bin/python3.7 .
+. bin/activate
+pip install -r requirements.txt
+ln -sf profiles/staging.cfg buildout.cfg
+buildout -N
+```
+
+## pm2
+
+If pm2 has been set as manager the following files are generated:
+
+* ecosystem.config.js
+* bin/pm2_restart_plone.sh
+
+A crontab is also installed to run the pm2_restart_plone.sh script.
+
+
+## supervisor
+
+If supervisor has been set as manager the following file is generated:
+
+* bin/supervisor_restart_plone.sh
+
+A crontab is also installed to run the supervisor_restart_plone.sh script.
+
+
 
 How to make a copy of this buildout
 -----------------------------------
@@ -12,18 +46,6 @@ wget -O master.zip https://github.com/RedTurtle/deployments.buildout.production/
 unzip master.zip
 rm master.zip
 cd deployments.buildout.production-master
-make quickstart
-```
-
-For the impatients
-------------------
-Those are the commands you want to run
-```bash
-virtualenv-2.7 --no-site-packages -p /usr/bin/python2.7 .
-. bin/activate
-ln -sf profiles/simple.cfg buildout.cfg
-./bin/pip install -r requirements.txt
-./bin/buildout
 ```
 
 This will give you, in the `bin` folder a bunch of commands to control your

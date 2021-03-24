@@ -1,12 +1,10 @@
-.PHONY: get_all get_haproxy get_plone get_varnish lucky quickstart
+.PHONY: get_all get_haproxy get_plone get_varnish
 
 PATH := .:$(PATH)
 
 
 BASE_URL=https://github.com/RedTurtle
 
-lucky:
-	./.imfeelinglucky.sh
 
 get_haproxy:
 	wget -O master.zip https://github.com/RedTurtle/deployments.buildout.haproxy/archive/master.zip
@@ -31,7 +29,6 @@ get_varnish:
 
 get_all: get_haproxy get_plone get_varnish
 
-quickstart: lucky
 
 components:
 	./bin/fab component_buildout

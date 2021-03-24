@@ -1,0 +1,46 @@
+module.exports = {
+  apps: [
+    {% for part in parts.values() %} {% if part.name == 'pm2_config' %} {% for key,value in part.items() %} {% if key.startswith('process') %}\
+    {
+      {% if value.startswith('instance') or value == 'zeoserver' %}\
+      script: "${parts.buildout.directory}/components/plone/bin/$value",
+      {% end %}\
+      {% if value == 'varnish' %}\
+      script: "${parts.buildout.directory}/components/varnish/bin/varnish-script",
+      args: "-F",
+      {% end %}\
+      {% if value == 'haproxy' %}\
+      script: "${parts.buildout.directory}/components/haproxy/bin/haproxy",
+      args: "-f ${parts.buildout.directory}/components/haproxy/etc/haproxy.conf -db",
+      {% end %}\
+      {% if value == 'memcached' %}\
+      script: "${parts.buildout.directory}/components/plone/parts/memcached/bin/memcached",
+      args: "-m 64 -p 9065 -l 127.0.0.1",
+      {% end %}\
+      {% if value.startswith('instance') %}\
+      args: "console",
+      {% end %}\
+      {% if value == 'zeoserver' %}\
+      args: "fg",
+      {% end %}\
+      name: "${parts.pm2_config.site_name}-$value",
+      cwd: "${parts.buildout.directory}",
+      {% if value.startswith('instance') or value == 'zeoserver' %}\
+      interpreter:
+        "${parts.buildout.directory}/components/plone/bin/python",
+      {% end %}\
+      {% if value.startswith('instance') %}\
+      pid: "${parts.buildout.directory}/components/plone/var/${value}.pid",
+      {% end %}\
+      {% if value == 'varnish' or value == 'haproxy'%}\
+      exec_interpreter: "bash",
+      {% end %}\
+      {% if value == 'memcached'%}\
+      exec_interpreter: "none",
+      exec_mode: "fork_mode",
+      {% end %}\
+    },
+    {% end %}{% end %}{% end %}{% end %}\
+  ],
+};
+

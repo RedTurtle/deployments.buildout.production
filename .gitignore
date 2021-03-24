@@ -12,3 +12,6 @@
 /parts/
 /src/
 /var/
+.python-version
+ecosystem.config.js
+pyvenv.cfg
