@@ -1,0 +1,11 @@
+.python-version
+bin/
+lib/
+buildout.cfg
+develop-eggs/
+eggs/
+etc
+/parts/
+pyvenv.cfg
+.installed.cfg
+plone.recipe.haproxy

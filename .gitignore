@@ -2,7 +2,6 @@
 /.mr.developer.cfg
 /bin/
 /buildout.cfg
-/components/*/
 /develop-eggs/*
 /eggs/
 /etc/

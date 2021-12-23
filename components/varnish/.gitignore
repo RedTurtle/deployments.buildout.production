@@ -1,0 +1,17 @@
+.python-version
+lib64
+pyvenv.cfg
+share/
+/.installed.cfg
+/bin/*
+/buildout.cfg
+/eggs/*
+/etc/*
+/develop-eggs/*
+/etc/*
+/include
+/lib
+/local
+/parts
+/pip-selfcheck.json
+/var
