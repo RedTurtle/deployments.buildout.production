@@ -4,15 +4,9 @@ SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 pm2_command=`which pm2`
-plone_instances=`$$pm2_command ls|egrep -o ${parts.pm2_config.site_name}-instance.?`
+pm2_plone_id_list=`$$pm2_command ls|grep ${parts.pm2_config.site_name}-instance|awk '{ print $2}'`
 
-MAX=5
-MIN=60
-DIFF=$((MAX-MIN+1))
-random_sleep=$(($(($$RANDOM%$$DIFF))+$$MIN))
-
-sleep $$random_sleep
-for instance in $$plone_instances; do
+for instance in $$pm2_plone_id_list; do
     $$pm2_command restart $$instance
     sleep 30
 done
